@@ -43,6 +43,11 @@ make clean
 Para probarlo basta ejecutar algún comando por ejemplo:
 
 ```
-curl -L http://localhost:8080/forward?url=http://server2:8081/forward?url=http://server1:8080/ping -v
+http://localhost:8082/forward?url=http://server2-node:8083/forward?url=http://server1-node:8082/ping
+```
 
+o
+
+```
+http://localhost:8080/forward?url=http://server2-spring:8081/forward?url=http://server1-spring:8080/ping
 ```

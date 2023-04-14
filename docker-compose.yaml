@@ -1,33 +1,60 @@
 version: '3'
 
 services:
-  server1:
-    container_name: server1
+  server1-spring:
+    container_name: server1-spring
     build: ./springboot
     ports:
       - "8080:8080"
     environment:
       - PORT=8080
     networks:
-      serverNetwork:
+      springServerNetwork:
         aliases:
-            - server1
-  server2:
-    container_name: server2
+            - server1-spring
+  server2-spring:
+    container_name: server2-spring
     build: ./springboot
     ports:
       - "8081:8081"
     environment:
       - PORT=8081
     networks:
-      serverNetwork:
+      springServerNetwork:
         aliases:
-            - server2
-
+            - server2-spring
+  server1-node:
+    container_name: server1-node
+    build: ./node
+    ports:
+      - "8082:8082"
+    environment:
+      - PORT=8082
+    networks:
+      nodeServerNetwork:
+        aliases:
+            - server1-node
+  server2-node:
+    container_name: server2-node
+    build: ./node
+    ports:
+      - "8083:8083"
+    environment:
+      - PORT=8083
+    networks:
+      nodeServerNetwork:
+        aliases:
+            - server2-node
 networks:
-  serverNetwork:
+  springServerNetwork:
     driver: bridge
     ipam:
       driver: default
       config:
         - subnet: 192.168.0.0/24
+  nodeServerNetwork:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.1.0/24

@@ -6,7 +6,7 @@ initialize:
 	"C:/Archivos de Programa/Docker/Docker/Docker Desktop.exe"
 start:
 	net stop com.docker.service && net start com.docker.service
-deploy:	
+deploy:
 	docker-compose up
 stop:
 	docker-compose down

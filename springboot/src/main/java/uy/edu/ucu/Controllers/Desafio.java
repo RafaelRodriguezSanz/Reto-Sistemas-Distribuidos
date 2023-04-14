@@ -36,9 +36,6 @@ public class Desafio {
     public ResponseEntity<?> forward(@RequestParam("url") String url) {
         String response = restTemplate.getForObject(url, String.class);
         return ResponseEntity.ok(response);
-        // HttpHeaders headers = new HttpHeaders();
-        // headers.setLocation(URI.create(url));
-        // return new ResponseEntity<>(headers, HttpStatus.TEMPORARY_REDIRECT);
     }
 
 }
