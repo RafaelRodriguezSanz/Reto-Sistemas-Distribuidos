@@ -51,3 +51,9 @@ o
 ```
 http://localhost:8080/forward?url=http://server2-spring:8081/forward?url=http://server1-spring:8080/ping
 ```
+
+## Troubleshooting
+
+Puede ser que algunos de los comandos del make no funcionen. Depende de si se ejecutan en windows o en mac. En mac no deberían de funcionar todos. Se pueden ajustar para ese sistema operativo.
+
+Puede ser que el `make inicialize` tampoco funcione, porque la carpeta de instalación de dockerDesktop no sea la por defecto o el sistema se encuentre en otro idioma que no sea español.
